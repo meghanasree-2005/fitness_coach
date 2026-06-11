@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-green: #9333EA; /* Royal medium purple */
+  --color-primary-green-light: #C084FC; /* Delicate light lavender-purple */
+  --color-secondary-navy: #130B2F; /* Deep rich dark purple-navy */
+  --color-accent-orange: #D946EF; /* Vibrant fuchsia-purple accent */
+  --color-success-emerald: #A855F7; /* Soft violet success */
+  --color-warning-amber: #F59E0B; /* Warm orange amber */
+  --color-dark-bg: #0C0717; /* Very rich deep purple-black */
+  --color-light-bg: #FAF7FD; /* Soft light lavender-toned white */
+
+  /* Override default slate shades to give the entire tailwind UI a cohesive lavender-amethyst high-end vibe */
+  --color-slate-50: #FAF8FE;
+  --color-slate-100: #F3ECFC;
+  --color-slate-200: #E6DAFA;
+  --color-slate-300: #CBBAF2;
+  --color-slate-700: #3B2A6B;
+  --color-slate-800: #251B4F;
+  --color-slate-850: #1B113E;
+  --color-slate-900: #130B2F;
+  --color-slate-955: #0A061C;
+  --color-slate-950: #060312;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 bg-light-bg dark:text-gray-100 dark:bg-dark-bg antialiased transition-colors duration-300;
+  }
+  
+  /* Scrollbar custom styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-green to-primary-green-light;
+}
+

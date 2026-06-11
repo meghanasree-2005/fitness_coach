@@ -1,0 +1,6 @@
+{
+  "name": "Fitness Coach",
+  "description": "Your modern, premium personalized fitness and wellness guide, workout planner, nutrition advisor, and BMI calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
